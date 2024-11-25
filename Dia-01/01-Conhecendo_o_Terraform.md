@@ -27,3 +27,8 @@ O fluxo de trabalho principal do Terraform consiste em 03 estágios:
 ## Infraestrutura imutável
 
 A **infraestrutura imutável** é a infraestrutura que, uma vez implantada, nunca será modificada, somente substituída.
+
+<br>
+
+## Saiba mais
+[HashiCorp Terraform: What is Terraform?](https://developer.hashicorp.com/terraform/intro/)
