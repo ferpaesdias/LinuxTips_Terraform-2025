@@ -20,4 +20,7 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashi
 sudo yum -y install terraform
 ```
 
+<br>
 
+## Saiba mais
+[HashiCorp Terraform: Install Terraform](https://developer.hashicorp.com/terraform/install)   
