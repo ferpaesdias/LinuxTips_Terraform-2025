@@ -38,3 +38,9 @@ resource "aws_vpc" "main" {
 - **Argumentos** (Arguments): Os argumentos atribuem um valor a um nome. Eles aparecem dentro de blocos.
 
 - **Expressões** (Expressions): As expressões representam um valor, literalmente ou por referência e combinação de outros valores. Eles aparecem como valores para argumentos ou dentro de outras expressões.
+
+<br>
+
+## Saiba mais
+[HashiCorp Terraform: HCL](https://developer.hashicorp.com/terraform/docs/glossary#hcl)   
+[HashiCorp: Terraform Language Documentation](https://developer.hashicorp.com/terraform/language)   
