@@ -8,8 +8,6 @@ Um diretório de trabalho deve ser inicializado antes que o Terraform possa exec
 
 ## Conteúdo do diretório de trabalho
 
-<br>
-
 Um diretório de trabalho do Terraform normalmente contém:
 
 - Uma configuração do Terraform que descreve os recursos que o Terraform deve gerenciar. Espera-se que esta configuração mude com o tempo.
@@ -21,8 +19,6 @@ Um diretório de trabalho do Terraform normalmente contém:
 <br>
 
 ## Inicialização
-
-<br>
 
 Execute o comando `terraform init` para inicializar um diretório de trabalho que contém uma configuração do Terraform. Após a inicialização, você poderá executar outros comandos, como `terraform plan` e `terraform apply`.
 
