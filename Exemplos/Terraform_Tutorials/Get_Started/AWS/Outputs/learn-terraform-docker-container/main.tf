@@ -13,8 +13,9 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-08d70e59c07c61a3a"
-  instance_type = "t2.micro"
+  ami               = "ami-08d70e59c07c61a3a"
+  instance_type     = "t2.micro"
+  availability_zone = "us-west-2a"
 
   network_interface {
     network_interface_id = aws_network_interface.foo.id
@@ -34,8 +35,9 @@ resource "aws_vpc" "my_vpc" {
 
 # Create subnet
 resource "aws_subnet" "my_subnet" {
-  vpc_id     = aws_vpc.my_vpc.id
-  cidr_block = "10.0.1.0/24"
+  vpc_id            = aws_vpc.my_vpc.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "us-west-2a"
 }
 
 resource "aws_network_interface" "foo" {
