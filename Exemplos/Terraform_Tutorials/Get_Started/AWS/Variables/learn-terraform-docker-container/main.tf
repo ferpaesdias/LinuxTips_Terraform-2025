@@ -20,11 +20,11 @@ resource "aws_instance" "app_server" {
     network_interface_id = aws_network_interface.foo.id
     device_index         = 0
   }
-  
+
   tags = {
     Name = var.instance_name
   }
-    
+
 }
 
 # Create a VPC
@@ -34,8 +34,8 @@ resource "aws_vpc" "my_vpc" {
 
 # Create subnet
 resource "aws_subnet" "my_subnet" {
-  vpc_id            = aws_vpc.my_vpc.id
-  cidr_block        = "10.0.1.0/24"
+  vpc_id     = aws_vpc.my_vpc.id
+  cidr_block = "10.0.1.0/24"
 }
 
 resource "aws_network_interface" "foo" {
