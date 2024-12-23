@@ -1,4 +1,10 @@
 terraform {
+  cloud {
+    organization = "TotoLindo"
+    workspaces {
+      name = "WorkspaceDoToTo"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
