@@ -32,9 +32,13 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+*tfplan*
 
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore Backend config files
+**/backend.tf
 
 # End of https://www.toptal.com/developers/gitignore/api/terraform
