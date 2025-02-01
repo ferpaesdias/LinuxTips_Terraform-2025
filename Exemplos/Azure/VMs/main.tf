@@ -20,6 +20,33 @@ resource "azurerm_subnet" "vm-teste-subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
+# IP Público
+resource "azurerm_public_ip" "vm-teste-pip" {
+  name = "vm-teste-pip"
+  location = azurerm_resource_group.vm-teste-rg.location
+  resource_group_name = azurerm_resource_group.vm-teste-rg.name
+  allocation_method = "Dynamic"
+}
+
+# NSG
+resource "azurerm_network_security_group" "vm-teste-nsg" {
+  name = "vm-teste-nsg"
+  location =  azurerm_resource_group.vm-teste-rg.location
+  resource_group_name = azurerm_resource_group.vm-teste-rg.name
+
+  security_rule = {
+    name  = "SSH"
+    priority = 1001
+    direction = "Inbound"
+    access = "Allow"
+    protocol = "Tcp"
+    source_port_range = "*"
+    destination_port_range = "22"
+    source_address_prefix = "*"
+    destination_address_prefix = "*"
+  }
+}
+
 # Interface de rede
 resource "azurerm_network_interface" "vm-teste-netinterface" {
   name                = "vm-teste-netinterface"
@@ -31,6 +58,7 @@ resource "azurerm_network_interface" "vm-teste-netinterface" {
     name                          = "ip-interface"
     subnet_id                     = azurerm_subnet.vm-teste-subnet.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_public_ip.vm-teste-pip.id
   }
 }
 
@@ -59,6 +87,12 @@ resource "azurerm_linux_virtual_machine" "vm-teste-vm" {
     offer     = "debian-12"
     sku       = "12"
     version   = "latest"
+  }
+
+  # Tags
+  tags = {
+    App = "Terraform"
+    Uso = "Terraform-Statefile"
   }
 }
 
