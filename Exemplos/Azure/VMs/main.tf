@@ -128,8 +128,8 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
 
   # Tags
   tags = {
-    App = "Terraform"
-    Uso = "Terraform-Statefile"
+    App         = "Terraform"
+    Environment = "Dev"
   }
 }
 
